@@ -4,7 +4,7 @@ import { api } from "../utils/Api";
 import Card from "./Card";
 
 
-function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
+function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick }) {
 
     const [userName, setUserName] = React.useState('');
     const [userDescription, setUserDescription] = React.useState('');
@@ -18,6 +18,9 @@ function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
                 setUserName(data.name);
                 setUserDescription(data.about);
                 setUserAvatar(data.avatar);
+            })
+            .catch((err) => {
+                console.log(err);
             })
 
     })
@@ -35,7 +38,7 @@ function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
             .catch((err) => {
                 console.log(err);
             })
-    })
+    }, [])
 
 
 
@@ -44,7 +47,7 @@ function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
             <main className="content">
                 <section className="profile">
                     <div className="profile__image-button" onClick={onEditAvatar}>
-                        <img src={userAvatar} alt="Аватарка" className="profile__avatar" style={{ backgroundImage: `url(${userAvatar})` }} />
+                        <img src={userAvatar} alt="Аватарка" className="profile__avatar" />
                     </div>
                     <div className="profile__info">
                         <div className="profile__wrapper">
@@ -59,18 +62,15 @@ function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
                     <ul className="cards__list-style">
                     </ul>
                 </section>
+                <section className="cards">
+                    <ul className="cards__list-style">
+                        {cards.map((card) => (
+                            <Card key={card.id} card={card} onCardClick={onCardClick} />
+                        ))}
+
+                    </ul>
+                </section>
             </main>
-
-            <section className="cards">
-
-                <ul className="cards__list-style">
-                    {cards.map((card) => (
-                        <Card key={card.id} card={card} onCardClick={onCardClick}/>
-                    ))}
-                    
-                </ul>
-
-            </section>
         </>
     )
 }
