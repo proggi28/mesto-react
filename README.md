@@ -5,4 +5,3 @@
 технологии HTML, CSS, JavaScript, React.
 
 Проект доступен по ссылке на gh-pages: https://proggi28.github.io/mesto-react/
-
