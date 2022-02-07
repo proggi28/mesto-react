@@ -1,6 +1,9 @@
 import React from "react";
 
-function ImagePopup({name, link, isOpen, onClose}) {
+function ImagePopup({card, isOpen, onClose}) {
+
+    const {name, link} = card;
+
     return (
         <article className={`popup popup-image ${isOpen ? 'popup_is-opened' : ''}`} >
             <div className="popup-image__block">
