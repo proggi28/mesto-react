@@ -23,7 +23,7 @@ function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick }) {
                 console.log(err);
             })
 
-    })
+    }, [])
 
     React.useEffect(() => {
         api.getCards()
@@ -43,7 +43,6 @@ function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick }) {
 
 
     return (
-        <>
             <main className="content">
                 <section className="profile">
                     <div className="profile__image-button" onClick={onEditAvatar}>
@@ -71,7 +70,6 @@ function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick }) {
                     </ul>
                 </section>
             </main>
-        </>
     )
 }
 
