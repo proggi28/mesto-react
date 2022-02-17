@@ -28,7 +28,7 @@ function Card({ card, onCardClick, onCardLike, onCardDelete }) {
         onCardLike(card);
     }
 
-    function handleCardDelete() {
+    function handleCardClick() {
         onCardDelete(card);
     }
 
@@ -36,7 +36,7 @@ function Card({ card, onCardClick, onCardLike, onCardDelete }) {
     return (
         <li className="card">
             <img src={link} alt={name} className="card__image" onClick={handleClick} />
-            <button type="button" className={`card__button-delete ${cardDeleteButtonClassName}`} onClick={handleCardDelete}></button>
+            <button type="button" className={`card__button-delete ${cardDeleteButtonClassName}`} onClick={handleCardClick}></button>
             <div className="description">
                 <h2 className="card__title">{name}</h2>
                 <div className="card__like-container">

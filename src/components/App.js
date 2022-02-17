@@ -156,7 +156,7 @@ function App() {
                         name="delete"
                         buttonText='Да'>
                     </PopupWithForm>
-                    <ImagePopup isOpen={!!selectedCard.name && !!selectedCard.link} card={selectedCard} onClose={closeAllPopups} />
+                    <ImagePopup isOpen={selectedCard.name && selectedCard.link} card={selectedCard} onClose={closeAllPopups} />
                 </div>
             </div>
         </CurrentUserContext.Provider>
