@@ -26,6 +26,7 @@
 @import url(./blocks/card/__heart/card__heart.css);
 @import url(./blocks/card/__heart/_active/card__heart_active.css);
 @import url(./blocks/card/__button-delete/card__button-delete.css);
+@import url(./blocks/card/__button-delete/_hidden/card__button-delete_hidden.css);
 @import url(./blocks/card/__like-container/card__like-container.css);
 @import url(./blocks/card/__like-length/card__like-length.css);
 /*footer*/
